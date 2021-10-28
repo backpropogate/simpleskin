@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import {getProductsInCollection} from '../lib/shopify'
+import ProductList from '../components/ProductList'
 
 export default function Home({products}) {
   console.log(products)
   return (
-    <>
-    <h1 className="text-3xl">Hello there</h1>
-    </>
+    <div>
+    <ProductList products={products}/>
+    </div>
   )
 }
 
