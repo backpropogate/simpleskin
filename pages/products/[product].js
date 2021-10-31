@@ -2,7 +2,7 @@ import ProductPageContent from "../../components/ProductPageContent"
 import {getAllProducts, getProduct} from "../../lib/shopify"
 const ProductPage = ({product}) => {
     return (
-        <div>
+        <div className="min-h-screen py-12 sm:pt-20">
             <ProductPageContent product={product}/>
         </div>
     )
