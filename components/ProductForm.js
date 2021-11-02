@@ -2,8 +2,11 @@ import PreviousMap from "postcss/lib/previous-map"
 import { useState, useContext} from "react"
 import { formatter} from '../utils/helpers'
 import ProductOptions from "./ProductOptions"
+import { cartContext } from "../context/shopContext"
 
 const ProductForm = ({product}) => {
+    const {addToCart} = useContext(cartContext)
+    
     const allVariantOptions = product.variants.edges?.map(variant => {
         const allOptions = {}
 
@@ -36,6 +39,17 @@ const ProductForm = ({product}) => {
         setSelectedOptions(prevState => {
             return { ...prevState, [name]: value}
         })
+
+        const selection = {
+            ...selectedOptions,
+            [name]: value
+        }
+        
+        allVariantOptions.map(item => {
+            if (JSON.stringify(item.options) === JSON.stringify(selection)) {
+                setSelectedVariant(item)
+            }
+        })
     }
     return (
         <div className="rounded-2xl p-4 shadow-md flex flex-col w-full md:w-1/3">
@@ -53,7 +67,12 @@ const ProductForm = ({product}) => {
                     />
                 ))
             }
-            <button className="bg-black rounded-lg text-white px-2 py-3 hover:bg-gray-800"> Add To Cart</button>
+            <button
+            onClick={() => {
+                addToCart(selectedVariant)
+
+            }} 
+            className="bg-black rounded-lg text-white px-2 py-3 hover:bg-gray-800"> Add To Cart</button>
         </div>
     )
 }
