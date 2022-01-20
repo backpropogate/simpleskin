@@ -3,27 +3,18 @@ import Link from 'next/link'
 
 const Hero = () => {
     return (
-        <div className="my-48 mx-auto max-w-7xl px-4 sm:mt-24 md:mt-72 text-center">
-            <h1 className='font-extrabold text-gray-900'>
-                <p className="text-xl sm:text-3xl md:text-4xl"> Headless Ecomerce With Tailwind CSS:</p>
-                <p className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-4xl sm:text-6xl md:text-7xl">Modern eCommerce</p>
-            </h1>
-            <h2 className="mt-3 max-w-md mx-auto text-gray-500 sm:text-lg nd:mt-5 md:text-xl md:max-x-3xl">
-                Build the eCommerce Revolution
-            </h2>
-            <div className="mt-5 max-w-md mx-auto flex justify-center items-center md:mt-8">
-                <Link href="#">
-                    <a className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium py-3
-                    border-transparent rounded-md text-white bg-gray-900 hover:bg-gray-600 ">
-                        Enroll Now
-                    </a>
-                </Link>
-                <Link href="#">
-                    <a className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium py-3
-                    border-transparent rounded-md  text-gray-900 hover:text-gray-400 ">
-                        Learn More
-                    </a>
-                </Link>
+        <div className=' flex flex-col sm:flex-row justify-evenly items-center p-8'>
+            
+            <div className='sm:px-10 flex flex-col gap-5 sm:justify-evenly '>
+                <h1 className=' text-3xl sm:text-6xl font-bold'>Simple Skincare</h1>
+                <p className='sm:text-2xl max-w-md '>Skincare shouldn't be complicated<br/> so we made it simple</p>
+                <div className='flex gap-3'>
+                    <a href="/#products" className='sm:text-2xl bg-black text-white px-6 py-3 rounded'>Shop Now &rarr;</a>
+                    <a href="/#products" className= ' sm:text-2xl bg-none text-black px-6 py-3 rounded border-2 border-black'>New arrivals</a>
+                </div>
+            </div>
+            <div className='sm:w-1/2 sm:px-10'>
+                <img src="/skin.png" alt="" />
             </div>
             
         </div>

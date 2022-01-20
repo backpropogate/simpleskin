@@ -7,6 +7,9 @@ export default function Home({products}) {
   
   return (
     <div className="">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Hero/>
     <ProductList products={products}/>
     </div>
