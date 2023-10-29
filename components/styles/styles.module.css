@@ -1,6 +1,20 @@
 
   
- 
+ .payment-banner {
+  background-color: #5b32f6; 
+  padding: 8px 20px; 
+  color: #fff; 
+  text-align: center; 
+  font-size: 14px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+.logop {
+  height: 20px; 
+  margin-left: 8px;
+}
+  
   
 .example input[type=text] {
     padding: 10px;
